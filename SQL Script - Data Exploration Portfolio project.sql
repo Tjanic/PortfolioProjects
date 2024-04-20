@@ -1,3 +1,10 @@
+/*
+Partial Covid 19 Data Exploration
+
+Skills used: Joins, CTE, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+
+/*
+
 SELECT * 
 FROM CovidVaccinations
 
@@ -5,8 +12,7 @@ SELECT *
 FROM PortfolioProject..CovidDeaths
 
 
-
--- Select the Data we are going to be using
+-- Select the Data we are going to be starting with
 SELECT Location, date, total_cases, new_cases, total_deaths, population
 FROM PortfolioProject..CovidDeaths
 
@@ -34,7 +40,9 @@ FROM PortfolioProject..CovidDeaths
 GROUP BY Location
 ORDER BY TotalDeathCount DESC
 
--- Now to break it down by continent
+-- BREAKING THINGS DOWN BY CONTINENT
+
+-- Showing continent with the higher death count
 SELECT continent, MAX(total_deaths) as TotalDeathCountContinent
 FROM PortfolioProject..CovidDeaths
 GROUP BY continent
