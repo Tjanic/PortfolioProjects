@@ -11,7 +11,9 @@ SELECT Saledate, CONVERT(date,saledate)
 FROM PortfolioProject..HousingData
 
 UPDATE HousingData 
-SET Saledate = CONVERT(date,saledate)
+SET Saledate = CONVERT(date,saledate) 
+
+--If doesn't work properly
 
 ALTER TABLE HousingData
 ADD SaleDateConverted Date;
